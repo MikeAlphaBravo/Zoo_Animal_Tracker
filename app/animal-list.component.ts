@@ -9,6 +9,7 @@ import { Animal } from './animal.model';
       <option value="underTwoAnimals">Animals under 2 years old</option>
       <option value="overTwoAnimals">Animals over 2 years old</option>
     </select>
+    <br><br>
   <ol>
     <li *ngFor="let currentAnimal of childAnimalList | young:filterByYoung"><span>{{currentAnimal.name}}</span>
       <button class="btn btn-primary" (click)="editButtonHasBeenClicked(currentAnimal)">Edit!</button><br>
@@ -22,7 +23,7 @@ import { Animal } from './animal.model';
         <li>Sex: {{currentAnimal.sex}}</li>
         <li>Likes: {{currentAnimal.likes}}</li>
         <li>Dislikes: {{currentAnimal.dislikes}}</li>
-      </ul>
+      </ul><br>
     </li>
   </ol>
   `

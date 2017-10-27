@@ -16,7 +16,7 @@ import { Animal } from './animal.model';
       <br>
     <label>Enter Animal Diet:</label>
       <br>
-    <select>
+    <select #newDiet>
       <option value="Herbavore">Herbavore</option>
       <option value="Carnivore">Carnivore</option>
       <option value="Omnivore">Omnivore</option>
@@ -24,7 +24,7 @@ import { Animal } from './animal.model';
       <br>
     <label>Enter Animal Location:</label>
       <br>
-    <select>
+    <select #newLocation>
       <option value="Safari Ranch">Safari Ranch</option>
       <option value="Animal Kingdom Exhibit">Animal Kingdom Exhibit</option>
     </select>
@@ -34,7 +34,7 @@ import { Animal } from './animal.model';
       <br>
     <label>Enter Animal's Sex:</label>
       <br>
-    <select>
+    <select #newSex>
       <option value="Male">Male</option>
       <option value="Female">Female</option>
     </select>

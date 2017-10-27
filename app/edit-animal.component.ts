@@ -1,29 +1,48 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Animal } from './animal-model';
+import { Animal } from './animal.model';
 
 @Component({
   selector: 'edit-animal',
   template: `
   <div *ngIf="childSelectedAnimal">
-    <h3>{{childSelectedAnimal.name}}</h3>
-    <p>Animal Poured? {{childSelectedAnimal.poured}}</p>
+    <h3>{{childSelectedAnimal.species}}</h3>
     <h3>Edit Animal</h3>
+    <label>Enter Animal Species:</label>
+    <input type="text" [(ngModel)]="childSelectedAnimal.species">
+    <br>
     <label>Enter Animal Name:</label>
     <input type="text" [(ngModel)]="childSelectedAnimal.name">
     <br>
-    <label>Enter Animal Brewery:</label>
-    <input type="text" [(ngModel)]="childSelectedAnimal.brand">
+    <label>Enter Animal Age:</label>
+    <input type="number" [(ngModel)]="childSelectedAnimal.age">
     <br>
-    <label>Enter Animal ABV:</label>
-    <input type="text" [(ngModel)]="childSelectedAnimal.alcoholContent">
+    <label>Enter Animal Diet:</label>
     <br>
-    <label>Enter Animal Price Bracket (1-3):</label>
+    <select>
+
+    </select>
     <br>
-    <input type="radio" [(ngModel)]="childSelectedAnimal.price" [value]="3">3 (Low Cost)<br>
-    <input type="radio" [(ngModel)]="childSelectedAnimal.price" [value]="4">4 (Medium Cost)<br>
-    <input type="radio" [(ngModel)]="childSelectedAnimal.price" [value]="5">5 (Medium Cost)<br>
-    <input type="radio" [(ngModel)]="childSelectedAnimal.price" [value]="6">6 (High Cost)<br>
-    <input type="radio" [(ngModel)]="childSelectedAnimal.price" [value]="7">7 (High Cost)
+    <label>Enter Animal Location:</label>
+    <br>
+    <select>
+
+    </select>
+    <br>
+    <label>Enter Animal's Number of Caretakers:</label>
+    <input type="numer" [(ngModel)]="childSelectedAnimal.caretakers">
+    <br>
+    <label>Enter Animal's Sex:</label>
+    <br>
+    <select>
+
+    </select>
+    <br>
+    <label>Enter Animal's Likes:</label>
+    <input type="text" [(ngModel)]="childSelectedAnimal.likes">
+    <br>
+    <label>Enter Animal's Dislikes:</label>
+    <input type="text" [(ngModel)]="childSelectedAnimal.dislikes">
+    <br>
     <hr>
     <button (click)="doneButtonClicked()">Done</button>
   </div>

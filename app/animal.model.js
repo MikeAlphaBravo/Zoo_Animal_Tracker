@@ -11,8 +11,10 @@ var Animal = (function () {
         this.sex = sex;
         this.likes = likes;
         this.dislikes = dislikes;
+        this.aged = false;
+        this.yearsLeft = 20;
     }
     return Animal;
 }());
 exports.Animal = Animal;
-//# sourceMappingURL=animal-model.js.map
+//# sourceMappingURL=animal.model.js.map

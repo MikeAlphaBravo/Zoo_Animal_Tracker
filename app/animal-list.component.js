@@ -13,30 +13,13 @@ var core_1 = require("@angular/core");
 var AnimalListComponent = (function () {
     function AnimalListComponent() {
         this.clickSender = new core_1.EventEmitter();
-        this.filterByEmpty = "fullAnimals";
+        this.filterByYoung = "oldAnimals";
     }
     AnimalListComponent.prototype.onChange = function (optionFromMenu) {
-        this.filterByEmpty = optionFromMenu;
+        this.filterByYoung = optionFromMenu;
     };
     AnimalListComponent.prototype.editButtonHasBeenClicked = function (animalToEdit) {
         this.clickSender.emit(animalToEdit);
-    };
-    AnimalListComponent.prototype.priceColor = function (animal) {
-        if (animal.price === 7) {
-            return "bg-danger";
-        }
-        else if (animal.price === 6) {
-            return "bg-warning";
-        }
-        else if (animal.price === 5) {
-            return "bg-primary";
-        }
-        else if (animal.price === 4) {
-            return "bg-info";
-        }
-        else {
-            return "bg-success";
-        }
     };
     return AnimalListComponent;
 }());
@@ -51,7 +34,7 @@ __decorate([
 AnimalListComponent = __decorate([
     core_1.Component({
         selector: 'animal-list',
-        template: "\n  <select (change)=\"onChange($event.target.value)\">\n      <option value=\"allAnimals\">All Animals</option>\n      <option value=\"emptyAnimals\">Empty Animals</option>\n      <option value=\"fullAnimals\" selected=\"selected\">Full Animals</option>\n      <option value=\"underTenAnimals\">Animals under 10 pours left</option>\n      <option value=\"abvAnimals\">By ABV</option>\n    </select>\n  <ol>\n    <li *ngFor=\"let currentAnimal of childAnimalList | empty:filterByEmpty\"><span [class]=\"priceColor(currentAnimal)\">{{currentAnimal.name}}</span>\n      <input *ngIf=\"currentAnimal.poured === true\" type=\"checkbox\" checked (click)=\"toggleDone(currentAnimal, false)\"/>\n      <input *ngIf=\"currentAnimal.poured === false\" type=\"checkbox\" (click)=\"toggleDone(currentAnimal, true)\"/>\n      <button class=\"btn btn-primary\" (click)=\"editButtonHasBeenClicked(currentAnimal)\">Edit!</button><br>\n      <ul>\n        <li>Price: {{currentAnimal.price}}</li>\n        <li>Brewery: {{currentAnimal.brand}}</li>\n        <li>ABV: {{currentAnimal.alcoholContent}}</li>\n        <li>Pours Left: {{currentAnimal.poursLeft}}</li>\n      </ul>\n    </li>\n  </ol>\n  "
+        template: "\n  <select (change)=\"onChange($event.target.value)\">\n      <option value=\"allAnimals\">All Animals</option>\n      <option value=\"underTwoAnimals\">Animals under 2 years old</option>\n      <option value=\"overTwoAnimals\">Animals over 2 years old</option>\n    </select>\n  <ol>\n    <li *ngFor=\"let currentAnimal of childAnimalList | young:filterByYoung\"><span>{{currentAnimal.name}}</span>\n      <button class=\"btn btn-primary\" (click)=\"editButtonHasBeenClicked(currentAnimal)\">Edit!</button><br>\n      <ul>\n        <li>Species: {{currentAnimal.species}}</li>\n        <li>Name: {{currentAnimal.name}}</li>\n        <li>Age: {{currentAnimal.age}}</li>\n        <li>Diet: {{currentAnimal.diet}}</li>\n        <li>Location: {{currentAnimal.location}}</li>\n        <li>Caretakers: {{currentAnimal.caretakers}}</li>\n        <li>Sex: {{currentAnimal.sex}}</li>\n        <li>Likes: {{currentAnimal.likes}}</li>\n        <li>Dislikes: {{currentAnimal.dislikes}}</li>\n      </ul>\n    </li>\n  </ol>\n  "
     })
 ], AnimalListComponent);
 exports.AnimalListComponent = AnimalListComponent;

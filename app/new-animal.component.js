@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var animal_model_1 = require("./animal-model");
+var animal_model_1 = require("./animal.model");
 var NewAnimalComponent = (function () {
     function NewAnimalComponent() {
         this.newAnimalSender = new core_1.EventEmitter();
@@ -28,7 +28,7 @@ __decorate([
 NewAnimalComponent = __decorate([
     core_1.Component({
         selector: 'new-animal',
-        template: "\n    <h1>New Animal</h1>\n    <div>\n      <label>Enter Animal Name:</label>\n      <input #newName>\n    </div>\n    <div>\n      <label>Enter Animal Brand:</label>\n      <input #newBrand>\n    </div>\n    <div>\n      <label>Enter Animal ABV:</label>\n      <input #newABV>\n    </div>\n    <div>\n      <button (click)=\"submitForm(newName.value, newBrand.value, newPrice.value, newABV.value); newName.value=''; newBrand.value=''; newABV.value='';\">Add</button>\n    </div>\n  "
+        template: "\n    <h1>New Animal</h1>\n    <div>\n      <label>Enter Animal Name:</label>\n      <input #newName>\n    </div>\n    <div>\n      <label>Enter Animal Age:</label>\n      <input #newAge>\n    </div>\n    <div>\n      <label>Enter Animal Caretakers:</label>\n      <input #newCaretakers>\n    </div>\n    <div>\n      <button (click)=\"submitForm(newName.value, newAge.value, newCaretakers.value); newName.value=''; newAge.value=''; newCaretakers.value='';\">Add</button>\n    </div>\n  "
     })
 ], NewAnimalComponent);
 exports.NewAnimalComponent = NewAnimalComponent;

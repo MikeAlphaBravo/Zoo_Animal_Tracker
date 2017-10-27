@@ -1,26 +1,27 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Animal } from './animal-model';
+import { Animal } from './animal.model';
 
 @Component({
   selector: 'animal-list',
   template: `
   <select (change)="onChange($event.target.value)">
       <option value="allAnimals">All Animals</option>
-      <option value="emptyAnimals">Empty Animals</option>
-      <option value="fullAnimals" selected="selected">Full Animals</option>
-      <option value="underTenAnimals">Animals under 10 pours left</option>
-      <option value="abvAnimals">By ABV</option>
+      <option value="underTwoAnimals">Animals under 2 years old</option>
+      <option value="overTwoAnimals">Animals over 2 years old</option>
     </select>
   <ol>
-    <li *ngFor="let currentAnimal of childAnimalList | empty:filterByEmpty"><span [class]="priceColor(currentAnimal)">{{currentAnimal.name}}</span>
-      <input *ngIf="currentAnimal.poured === true" type="checkbox" checked (click)="toggleDone(currentAnimal, false)"/>
-      <input *ngIf="currentAnimal.poured === false" type="checkbox" (click)="toggleDone(currentAnimal, true)"/>
+    <li *ngFor="let currentAnimal of childAnimalList | young:filterByYoung"><span>{{currentAnimal.name}}</span>
       <button class="btn btn-primary" (click)="editButtonHasBeenClicked(currentAnimal)">Edit!</button><br>
       <ul>
-        <li>Price: {{currentAnimal.price}}</li>
-        <li>Brewery: {{currentAnimal.brand}}</li>
-        <li>ABV: {{currentAnimal.alcoholContent}}</li>
-        <li>Pours Left: {{currentAnimal.poursLeft}}</li>
+        <li>Species: {{currentAnimal.species}}</li>
+        <li>Name: {{currentAnimal.name}}</li>
+        <li>Age: {{currentAnimal.age}}</li>
+        <li>Diet: {{currentAnimal.diet}}</li>
+        <li>Location: {{currentAnimal.location}}</li>
+        <li>Caretakers: {{currentAnimal.caretakers}}</li>
+        <li>Sex: {{currentAnimal.sex}}</li>
+        <li>Likes: {{currentAnimal.likes}}</li>
+        <li>Dislikes: {{currentAnimal.dislikes}}</li>
       </ul>
     </li>
   </ol>
@@ -30,27 +31,13 @@ import { Animal } from './animal-model';
 export class AnimalListComponent {
   @Input() childAnimalList: Animal[];
   @Output() clickSender = new EventEmitter();
-  filterByEmpty: string = "fullAnimals";
+  filterByYoung: string = "oldAnimals";
 
   onChange(optionFromMenu) {
-    this.filterByEmpty = optionFromMenu;
+    this.filterByYoung = optionFromMenu;
   }
 
   editButtonHasBeenClicked(animalToEdit: Animal) {
     this.clickSender.emit(animalToEdit);
-  }
-
-  priceColor(animal){
-    if (animal.price === 7){
-      return "bg-danger";
-    } else if (animal.price === 6) {
-      return  "bg-warning";
-    } else if (animal.price === 5) {
-      return  "bg-primary";
-    } else if (animal.price === 4) {
-      return  "bg-info";
-    } else {
-      return "bg-success";
-    }
   }
 }

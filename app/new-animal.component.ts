@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { Animal } from './animal-model';
+import { Animal } from './animal.model';
 
 @Component({
   selector: 'new-animal',
@@ -10,15 +10,15 @@ import { Animal } from './animal-model';
       <input #newName>
     </div>
     <div>
-      <label>Enter Animal Brand:</label>
-      <input #newBrand>
+      <label>Enter Animal Age:</label>
+      <input #newAge>
     </div>
     <div>
-      <label>Enter Animal ABV:</label>
-      <input #newABV>
+      <label>Enter Animal Caretakers:</label>
+      <input #newCaretakers>
     </div>
     <div>
-      <button (click)="submitForm(newName.value, newBrand.value, newPrice.value, newABV.value); newName.value=''; newBrand.value=''; newABV.value='';">Add</button>
+      <button (click)="submitForm(newName.value, newAge.value, newCaretakers.value); newName.value=''; newAge.value=''; newCaretakers.value='';">Add</button>
     </div>
   `
 })

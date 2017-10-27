@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var animal_model_1 = require("./animal-model");
+var animal_model_1 = require("./animal.model");
 var EditAnimalComponent = (function () {
     function EditAnimalComponent() {
         this.doneButtonClickedSender = new core_1.EventEmitter;
@@ -31,7 +31,7 @@ __decorate([
 EditAnimalComponent = __decorate([
     core_1.Component({
         selector: 'edit-animal',
-        template: "\n  <div *ngIf=\"childSelectedAnimal\">\n    <h3>{{childSelectedAnimal.name}}</h3>\n    <p>Animal Poured? {{childSelectedAnimal.poured}}</p>\n    <h3>Edit Animal</h3>\n    <label>Enter Animal Name:</label>\n    <input type=\"text\" [(ngModel)]=\"childSelectedAnimal.name\">\n    <br>\n    <label>Enter Animal Brewery:</label>\n    <input type=\"text\" [(ngModel)]=\"childSelectedAnimal.brand\">\n    <br>\n    <label>Enter Animal ABV:</label>\n    <input type=\"text\" [(ngModel)]=\"childSelectedAnimal.alcoholContent\">\n    <br>\n    <label>Enter Animal Price Bracket (1-3):</label>\n    <br>\n    <input type=\"radio\" [(ngModel)]=\"childSelectedAnimal.price\" [value]=\"3\">3 (Low Cost)<br>\n    <input type=\"radio\" [(ngModel)]=\"childSelectedAnimal.price\" [value]=\"4\">4 (Medium Cost)<br>\n    <input type=\"radio\" [(ngModel)]=\"childSelectedAnimal.price\" [value]=\"5\">5 (Medium Cost)<br>\n    <input type=\"radio\" [(ngModel)]=\"childSelectedAnimal.price\" [value]=\"6\">6 (High Cost)<br>\n    <input type=\"radio\" [(ngModel)]=\"childSelectedAnimal.price\" [value]=\"7\">7 (High Cost)\n    <hr>\n    <button (click)=\"doneButtonClicked()\">Done</button>\n  </div>\n  "
+        template: "\n  <div *ngIf=\"childSelectedAnimal\">\n    <h3>{{childSelectedAnimal.species}}</h3>\n    <h3>Edit Animal</h3>\n    <label>Enter Animal Species:</label>\n    <input type=\"text\" [(ngModel)]=\"childSelectedAnimal.species\">\n    <br>\n    <label>Enter Animal Name:</label>\n    <input type=\"text\" [(ngModel)]=\"childSelectedAnimal.name\">\n    <br>\n    <label>Enter Animal Age:</label>\n    <input type=\"number\" [(ngModel)]=\"childSelectedAnimal.age\">\n    <br>\n    <label>Enter Animal Diet:</label>\n    <br>\n    <select>\n\n    </select>\n    <br>\n    <label>Enter Animal Location:</label>\n    <br>\n    <select>\n\n    </select>\n    <br>\n    <label>Enter Animal's Number of Caretakers:</label>\n    <input type=\"numer\" [(ngModel)]=\"childSelectedAnimal.caretakers\">\n    <br>\n    <label>Enter Animal's Sex:</label>\n    <br>\n    <select>\n\n    </select>\n    <br>\n    <label>Enter Animal's Likes:</label>\n    <input type=\"text\" [(ngModel)]=\"childSelectedAnimal.likes\">\n    <br>\n    <label>Enter Animal's Dislikes:</label>\n    <input type=\"text\" [(ngModel)]=\"childSelectedAnimal.dislikes\">\n    <br>\n    <hr>\n    <button (click)=\"doneButtonClicked()\">Done</button>\n  </div>\n  "
     })
 ], EditAnimalComponent);
 exports.EditAnimalComponent = EditAnimalComponent;

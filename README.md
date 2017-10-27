@@ -80,6 +80,7 @@ _Updates or suggestions please contact [Michael A. Brooks] or make a contributio
 * Styling to make a better user experience
 
 User experience screenshots:
+
 ![alt text](/resources/images/tracker.png)
 
 ![alt text](/resources/images/newanimal.png)

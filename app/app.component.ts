@@ -1,42 +1,40 @@
 import { Component } from '@angular/core';
-import { Beverage } from './beverage-model';
+import { Animal } from './animal-model';
 
 @Component({
   selector: 'app-root',
   template: `
   <div class="container">
     <h1>Tap Room Keg Tracker</h1>
-    <beverage-list [childBeverageList]="masterBeverageList" (clickSender)="editBeverage($event)"></beverage-list>
+    <animal-list [childAnimalList]="masterAnimalList" (clickSender)="editAnimal($event)"></animal-list>
     <hr>
-    <edit-beverage [childSelectedBeverage]="selectedBeverage" (doneButtonClickedSender)="finishedEditing()"></edit-beverage>
+    <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickedSender)="finishedEditing()"></edit-animal>
     <hr>
-    <new-beverage (newBeverageSender)="addBeverage($event)"></new-beverage>
+    <new-animal (newAnimalSender)="addAnimal($event)"></new-animal>
   </div>
 
   `
 })
 
 export class AppComponent {
-  masterBeverageList: Beverage[] = [
-    new Beverage('Drop Top Ale', 'Bend Beverages', 5, 3.5),
-    new Beverage('Sunny Shine Shillings', 'Oregon or Egon', 4, 3.0),
-    new Beverage('Real Hard Stuff', 'Hammer Ales', 6, 5.0),
-    new Beverage('Citrus Cilliness', 'Light Beer Inc.', 4, 2.5),
-    new Beverage('Hold Onto Your Hats', 'Get it Co.', 7, 8.3),
-    new Beverage('Urine Town', 'Water Beer', 3, 1.8)
+  masterAnimalList: Animal[] = [
+    new Animal('Monkey', 'George', 5, 'Omnivore', 'Animal Kingdom Exhibit', 3, 'Male', 'Garbage cans full of bananas', 'Real Housewives of Atlanta'),
+    new Animal('Giraff', 'Margaret', 4, 'Herbavore', 'Safari Ranch', 5, 'Female', 'Fresh Kale', 'Small children'),
+    new Animal('Mongoose', 'Hillary', 1, 'Herbavore', 'Safari Ranch', 1, 'Female', 'Luke warm baths', 'Loud sounds'),
+    new Animal('Wildabeast', 'Max', 10, 'Carnivore', 'Safari Ranch', 3, 'Male', 'Running rampant on the wild plains', 'Slum lords who run the outback'),
   ];
 
-  selectedBeverage: Beverage = null;
+  selectedAnimal: Animal = null;
 
-  editBeverage(clickedBeverage) {
-    this.selectedBeverage = clickedBeverage;
+  editAnimal(clickedAnimal) {
+    this.selectedAnimal = clickedAnimal;
   }
 
   finishedEditing() {
-    this.selectedBeverage = null;
+    this.selectedAnimal = null;
   }
 
-  addBeverage(newBeverageFromChild: Beverage) {
-    this.masterBeverageList.push(newBeverageFromChild);
+  addAnimal(newAnimalFromChild: Animal) {
+    this.masterAnimalList.push(newAnimalFromChild);
   }
 }

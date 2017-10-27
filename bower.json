@@ -1,5 +1,5 @@
 {
-  "name": "tap-room",
+  "name": "animal-tracker",
   "description": "",
   "main": "",
   "license": "MIT",
@@ -13,5 +13,8 @@
   ],
   "dependencies": {
     "bootstrap": "^3.3.7"
-  }
+  },
+  "authors": [
+    "Michael Brooks <mikeyabrooks@gmail.com>"
+  ]
 }

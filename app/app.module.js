@@ -10,9 +10,9 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
 var forms_1 = require("@angular/forms");
-var beverage_list_component_1 = require("./beverage-list.component");
-var edit_beverage_component_1 = require("./edit-beverage.component");
-var new_beverage_component_1 = require("./new-beverage.component");
+var animal_list_component_1 = require("./animal-list.component");
+var edit_animal_component_1 = require("./edit-animal.component");
+var new_animal_component_1 = require("./new-animal.component");
 var empty_pipe_1 = require("./empty.pipe");
 var AppModule = (function () {
     function AppModule() {
@@ -22,7 +22,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-        declarations: [app_component_1.AppComponent, beverage_list_component_1.BeverageListComponent, edit_beverage_component_1.EditBeverageComponent, new_beverage_component_1.NewBeverageComponent, empty_pipe_1.EmptyPipe],
+        declarations: [app_component_1.AppComponent, animal_list_component_1.AnimalListComponent, edit_animal_component_1.EditAnimalComponent, new_animal_component_1.NewAnimalComponent, empty_pipe_1.EmptyPipe],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

@@ -11,40 +11,36 @@ var EmptyPipe = (function () {
     function EmptyPipe() {
     }
     EmptyPipe.prototype.transform = function (input, desiredEmpty) {
-        var output = [];
-        if (desiredEmpty === "emptyBeverages") {
-            for (var i = 0; i < input.length; i++) {
-                if (input[i].poured === true) {
-                    output.push(input[i]);
-                }
-            }
-            return output;
-        }
-        else if (desiredEmpty === "fullBeverages") {
-            for (var i = 0; i < input.length; i++) {
-                if (input[i].poured === false) {
-                    output.push(input[i]);
-                }
-            }
-            return output;
-        }
-        else if (desiredEmpty === "underTenBeverages") {
-            for (var i = 0; i < input.length; i++) {
-                if (input[i].poursLeft <= 10) {
-                    output.push(input[i]);
-                }
-            }
-            return output;
-        }
-        else if (desiredEmpty === "abvBeverages") {
-            output = input.sort(function (a, b) {
-                return b.alcoholContent - a.alcoholContent;
-            });
-            return output;
-        }
-        else {
-            return input;
-        }
+        //   let output: Animal[] = [];
+        //   if(desiredEmpty === "emptyAnimals") {
+        //     for (var i = 0; i < input.length; i++) {
+        //       if (input[i].poured === true) {
+        //         output.push(input[i]);
+        //       }
+        //     }
+        //     return output;
+        //   } else if (desiredEmpty === "fullAnimals") {
+        //     for (var i = 0; i < input.length; i++) {
+        //       if (input[i].poured === false) {
+        //         output.push(input[i]);
+        //       }
+        //     }
+        //     return output;
+        //   } else if (desiredEmpty === "underTenAnimals") {
+        //     for (var i = 0; i < input.length; i++) {
+        //       if (input[i].poursLeft <= 10) {
+        //         output.push(input[i]);
+        //       }
+        //     }
+        //     return output;
+        //   } else if (desiredEmpty === "abvAnimals") {
+        //     output = input.sort(function(a, b) {
+        //       return b.alcoholContent - a.alcoholContent;
+        //     })
+        //     return output;
+        //   } else {
+        //     return input;
+        //   }
     };
     return EmptyPipe;
 }());

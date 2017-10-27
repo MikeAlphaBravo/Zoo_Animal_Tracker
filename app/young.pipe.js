@@ -12,17 +12,9 @@ var YoungPipe = (function () {
     }
     YoungPipe.prototype.transform = function (input, desiredYoung) {
         var output = [];
-        if (desiredYoung === "youngAnimals") {
+        if (desiredYoung === "overTwoAnimals") {
             for (var i = 0; i < input.length; i++) {
-                if (input[i].aged === true) {
-                    output.push(input[i]);
-                }
-            }
-            return output;
-        }
-        else if (desiredYoung === "oldAnimals") {
-            for (var i = 0; i < input.length; i++) {
-                if (input[i].aged === false) {
+                if (input[i].age > 2) {
                     output.push(input[i]);
                 }
             }
@@ -30,13 +22,13 @@ var YoungPipe = (function () {
         }
         else if (desiredYoung === "underTwoAnimals") {
             for (var i = 0; i < input.length; i++) {
-                if (input[i].yearsLeft <= 2) {
+                if (input[i].age <= 2) {
                     output.push(input[i]);
                 }
             }
             return output;
         }
-        else if (desiredYoung === "abvAnimals") {
+        else if (desiredYoung === "ageSortAnimals") {
             output = input.sort(function (a, b) {
                 return b.age - a.age;
             });

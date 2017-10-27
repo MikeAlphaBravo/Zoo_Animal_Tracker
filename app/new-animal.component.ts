@@ -6,43 +6,47 @@ import { Animal } from './animal.model';
   template: `
     <h1>New Animal</h1>
     <label>Enter Animal Species:</label>
-      <input type="text" [(ngModel)]="childSelectedAnimal.species">
+      <input #newSpecies>
       <br>
     <label>Enter Animal Name:</label>
-      <input type="text" [(ngModel)]="childSelectedAnimal.name">
+      <input #newName>
       <br>
     <label>Enter Animal Age:</label>
-      <input type="number" [(ngModel)]="childSelectedAnimal.age">
+      <input #newAge>
       <br>
     <label>Enter Animal Diet:</label>
       <br>
     <select>
-
+      <option value="Herbavore">Herbavore</option>
+      <option value="Carnivore">Carnivore</option>
+      <option value="Omnivore">Omnivore</option>
     </select>
       <br>
     <label>Enter Animal Location:</label>
       <br>
     <select>
-
+      <option value="Safari Ranch">Safari Ranch</option>
+      <option value="Animal Kingdom Exhibit">Animal Kingdom Exhibit</option>
     </select>
       <br>
     <label>Enter Animal's Number of Caretakers:</label>
-      <input type="numer" [(ngModel)]="childSelectedAnimal.caretakers">
+      <input #newCaretakers>
       <br>
     <label>Enter Animal's Sex:</label>
       <br>
     <select>
-
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
     </select>
       <br>
     <label>Enter Animal's Likes:</label>
-      <input type="text" [(ngModel)]="childSelectedAnimal.likes">
+      <input #newLikes>
       <br>
     <label>Enter Animal's Dislikes:</label>
-      <input type="text" [(ngModel)]="childSelectedAnimal.dislikes">
+      <input #newDislikes>
       <br>
     <div>
-      <button (click)="submitForm(newName.value, newAge.value, newCaretakers.value); newName.value=''; newAge.value=''; newCaretakers.value='';">Add</button>
+      <button (click)="submitForm(newSpecies.value, newName.value, newAge.value, newDiet.value, newLocation.value, newCaretakers.value, newSex.value, newLikes.value, newDislikes.value); newSpecies.value=''; newName.value=''; newAge.value=''; newDiet.value=''; newLocation.value=''; newCaretakers.value=''; newSex.value=''; newLikes.value=''; newDislikes.value='';">Add</button>
     </div>
   `
 })

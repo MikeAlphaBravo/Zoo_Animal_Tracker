@@ -32,7 +32,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'app-root',
-        template: "\n  <div class=\"container\">\n    <h1>Tap Room Keg Tracker</h1>\n    <animal-list [childAnimalList]=\"masterAnimalList\" (clickSender)=\"editAnimal($event)\"></animal-list>\n    <hr>\n    <edit-animal [childSelectedAnimal]=\"selectedAnimal\" (doneButtonClickedSender)=\"finishedEditing()\"></edit-animal>\n    <hr>\n    <new-animal (newAnimalSender)=\"addAnimal($event)\"></new-animal>\n  </div>\n\n  "
+        template: "\n  <div class=\"container\">\n    <h1>Zoo Animal Tracker</h1>\n    <animal-list [childAnimalList]=\"masterAnimalList\" (clickSender)=\"editAnimal($event)\"></animal-list>\n    <hr>\n    <edit-animal [childSelectedAnimal]=\"selectedAnimal\" (doneButtonClickedSender)=\"finishedEditing()\"></edit-animal>\n    <hr>\n    <new-animal (newAnimalSender)=\"addAnimal($event)\"></new-animal>\n  </div>\n\n  "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;

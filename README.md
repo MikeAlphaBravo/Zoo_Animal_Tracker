@@ -3,6 +3,8 @@
 # _Zoo Animal Tracker_
 -------------------
 
+![alt text](/resources/images/homepage.png)
+
 #### _Using Angular to build an animal tracking software for a zoo, 10.27.2017_
 
 #### By _Michael A. Brooks_
@@ -13,7 +15,7 @@ _Create an app using Angular to give zoo employees access to animal lists as wel
 
 ## Specs
 
-* _As a user I want to log a newly-admitted animal by submitting a form with animal species, name, age, diet, zoo location, number of needed caretakers, sex, one like and one dislike.
+* _As a user I want to log a newly-admitted animal by submitting a form with animal species, name, age, diet, zoo location, number of needed caretakers, sex, one like and one dislike_.
 * _I want to view a list of animals I have logged._
 * _I want options to view all animals, only young animals (less than 2 years of age), or only mature animals (2 years of age and older)._
 * _I want to click an animal to edit its name, age or caretakers._
@@ -24,30 +26,23 @@ These instructions will get you a copy of the project up and running on your loc
 
 Open terminal on your computer,
 Navigate to the folder you would like to clone the project into and run:
-```
-git clone https://github.com/MikeAlphaBravo/angular-independent
-```
-```
-cd angular-independent
-```
-```
-npm install
-```
-```
-bower init
-```
-```
-bower install
-```
-```
-bower install bootstrap --save
-```
-```
-gulp build
-```
-```
-gulp serve
-```
+
+`git clone https://github.com/MikeAlphaBravo/angular-independent`
+
+`cd angular-independent`
+
+`npm install`
+
+`bower init`
+
+`bower install`
+
+`bower install bootstrap --save`
+
+`gulp build`
+
+`gulp serve`
+
 This should redirect you to an open tab in your default browser.
 You can now sort, edit and create animals within the tracker!
 
@@ -79,13 +74,11 @@ _Updates or suggestions please contact [Michael A. Brooks] or make a contributio
 * Sort by Dislikes
 * Styling to make a better user experience
 
-User experience screenshots:
+## User experience screenshots:
 
-![alt text](/resources/images/tracker.png)
+![alt text](/resources/images/new.png)
 
-![alt text](/resources/images/newanimal.png)
-
-![alt text](/resources/images/editanimal.png)
+![alt text](/resources/images/edit.png)
 
 ### License
 
